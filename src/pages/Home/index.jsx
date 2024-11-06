@@ -1,7 +1,7 @@
 function Home() {
   return (
     <div>
-      <h1>Intelflix</h1>
+      <h2>Bem vindo a home.</h2>
     </div>
   );
 }
