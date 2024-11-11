@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "./filme_info.css";
+import { toast } from "react-toastify";
 
 import api from "../../services/api";
 
@@ -48,13 +49,13 @@ function Filme() {
     );
 
     if (hasFilme) {
-      alert("Esse filme já está na lista!");
+      toast.warn("Esse filme já está na sua lista!");
       return;
     }
 
     filmesSalvos.push(filme);
     localStorage.setItem("@intelflix", JSON.stringify(filmesSalvos));
-    alert("Filme salvo com sucesso!");
+    toast.success("Filme salvo com sucesso!");
   }
 
   if (loading) {
